@@ -1,0 +1,125 @@
+.page {
+  min-height: 100vh;
+  background: #080808;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 1.5rem 4rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: #0f0f0f;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 3rem;
+}
+
+.logo {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin: 0 0 2.5rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.tab {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.8rem 1.5rem 0.8rem 0;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+.tab.active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.error {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: #e05555;
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.field label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.field input,
+.field select {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: #fff;
+  background: #080808;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.85rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.field input:focus,
+.field select:focus {
+  border-color: rgba(255,255,255,0.25);
+}
+.field input::placeholder { color: rgba(255,255,255,0.2); }
+
+.field select option { background: #111; }
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.submit {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1rem;
+  background: #fff;
+  color: #080808;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+.submit:hover:not(:disabled) { background: #e0e0e0; }
+.submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
