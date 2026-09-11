@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import type { Product } from '../../types/product.types';
+import WishlistButton from '../WishlistButton/WishlistButton';
 import styles from './ProductCard.module.css';
 
 interface Props {
@@ -36,12 +37,33 @@ export default function ProductCard({ product }: Props) {
             />
           ))}
         </div>
+
+        <div className={styles.wishlistBtn} onClick={e => e.stopPropagation()}>
+          <WishlistButton
+            item={{
+              id: product.id,
+              name: product.name,
+              price: product.price,
+              imageUrl: product.images?.[0]?.url ?? '',
+              category: product.category ?? undefined,
+            }}
+            size={18}
+          />
+        </div>
+        
         {product.status === 'out_of_stock' && (
           <span className={styles.badge}>Sold Out</span>
         )}
       </div>
+
+
       <div className={styles.info}>
-        <p className={styles.category}>{product.category?.name ?? 'Audio'}</p>
+        <p className={styles.category}>
+          {product.category ?? 'Audio'}
+          {product.subCategory && (
+            <span className={styles.subCategory}> · {product.subCategory}</span>
+          )}
+        </p>
         <h3 className={styles.name}>{product.name}</h3>
         <p className={styles.price}>{priceFormatted}</p>
       </div>

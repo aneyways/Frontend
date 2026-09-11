@@ -40,11 +40,7 @@
 }
 .pillar:last-child { border-right: none; }
 
-.glyph {
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.3);
-  line-height: 1;
-}
+
 
 .pillarTitle {
   font-family: 'Playfair Display', serif;

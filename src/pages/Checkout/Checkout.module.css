@@ -1,0 +1,345 @@
+.page {
+  min-height: 100vh;
+  background: #080808;
+  padding: 8rem clamp(1.5rem, 5vw, 5rem) 6rem;
+}
+
+.header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Form */
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  background: #0f0f0f;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 2.5rem;
+}
+
+.cardTitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin: 0 0 2rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+}
+
+.field input {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: #fff;
+  background: #080808;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.field input:focus { border-color: rgba(255,255,255,0.25); }
+.field input::placeholder { color: rgba(255,255,255,0.2); }
+
+/* Payment */
+.paymentMethods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.paymentBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.2rem;
+  background: transparent;
+  color: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.paymentBtn:hover { border-color: rgba(255,255,255,0.2); color: #fff; }
+.paymentBtn.paymentActive {
+  background: #fff;
+  color: #080808;
+  border-color: #fff;
+}
+
+.error {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: #e05555;
+  padding: 1rem;
+  border: 1px solid rgba(224,85,85,0.2);
+  background: rgba(224,85,85,0.05);
+}
+
+.submitBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1.2rem;
+  background: #fff;
+  color: #080808;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.25s;
+}
+.submitBtn:hover:not(:disabled) { background: #e0e0e0; }
+.submitBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.backBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: center;
+  transition: color 0.2s;
+  width: 100%;
+}
+.backBtn:hover { color: #fff; }
+
+/* Summary */
+.summary {
+  background: #0f0f0f;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 2.5rem;
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.summaryTitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin: 0;
+}
+
+.summaryItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.summaryItemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.summaryItemName {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+
+.summaryItemQty {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.25);
+  margin: 0;
+}
+
+.summaryItemPrice {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.summaryRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Success */
+.success {
+  min-height: 100vh;
+  background: #080808;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 4rem;
+  text-align: center;
+}
+
+.successIcon {
+  font-size: 3rem;
+  color: #4caf7d;
+}
+
+.successTitle {
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+}
+
+.successSub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.35);
+  max-width: 400px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.successBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  background: #fff;
+  color: #080808;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.25s;
+}
+.successBtn:hover { background: #e0e0e0; }
+
+/* Empty */
+.empty {
+  min-height: 100vh;
+  background: #080808;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.emptyTitle {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 2rem;
+  color: #fff;
+  margin: 0;
+}
+
+.emptyBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  background: #fff;
+  color: #080808;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+.emptyBtn:hover { background: #e0e0e0; }
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; }
+  .summary { position: static; }
+  .formGrid { grid-template-columns: 1fr; }
+}
+
+/* Пример кастомизации элементов Stripe */
+:global(.StripeElement) {
+  background-color: #080808 !important;
+  padding: 12px !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}

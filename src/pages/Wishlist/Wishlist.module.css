@@ -1,0 +1,173 @@
+.page {
+  min-height: 100vh;
+  background: #1a1a1a;
+  padding: 8rem clamp(1.5rem, 5vw, 5rem) 6rem;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  display: block;
+  width: 100%;
+}
+
+.title {
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.02em;
+  flex: 1;
+}
+
+.count {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 0;
+}
+.empty p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.3);
+  margin: 0;
+}
+.empty button {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  background: #fff;
+  color: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  transition: background 0.2s;
+}
+.empty button:hover { background: #e8e8e8; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+}
+
+.card {
+  background: #232323;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgWrap {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #2a2a2a;
+  cursor: pointer;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.card:hover .img { transform: scale(1.04); }
+
+.info {
+  padding: 1.2rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.category {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin: 0;
+}
+
+.name {
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.25;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.name:hover { color: rgba(255,255,255,0.7); }
+
+.price {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin: 0.3rem 0 0;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.cartBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.5rem;
+  background: #fff;
+  color: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  transition: background 0.2s;
+}
+.cartBtn:hover { background: #e8e8e8; }
+
+.removeBtn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.3);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+.removeBtn:hover {
+  color: #e05555;
+  border-color: rgba(224,85,85,0.3);
+}

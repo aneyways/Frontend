@@ -1,42 +1,317 @@
 .page {
   min-height: 100vh;
   background: #080808;
+  padding: 8rem clamp(1.5rem, 5vw, 5rem) 6rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 4rem;
+}
+
+.breadcrumb button {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+.breadcrumb button:hover { color: #fff; }
+
+.breadcrumb span {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.15);
+}
+
+/* Layout */
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: start;
+}
+
+/* Gallery */
+.gallery {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 8rem clamp(1.5rem, 8vw, 10rem);
+  gap: 1rem;
+  position: sticky;
+  top: 6rem;
 }
 
-.eyebrow {
+.mainImg {
+  aspect-ratio: 1 / 1;
+  background: #0f0f0f;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.mainImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.mainImg:hover img { transform: scale(1.04); }
+
+.thumbs {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.thumb {
+  width: 72px;
+  height: 72px;
+  background: #0f0f0f;
+  border: 1px solid rgba(255,255,255,0.05);
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.thumb.thumbActive {
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* Info */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.category {
   font-family: 'DM Mono', monospace;
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
-  display: block;
-  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.3);
+  margin: 0;
 }
 
-.title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 7vw, 5rem);
+.name {
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 900;
   color: #fff;
-  margin: 0 0 3rem;
+  margin: 0;
+  line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
-.cta {
+.price {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.4rem;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.4);
+  margin: 0;
+  max-width: 480px;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.addToCart {
   font-family: 'DM Mono', monospace;
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 1rem 2.5rem;
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
+  background: #fff;
+  color: #080808;
+  border: none;
   cursor: pointer;
-  width: fit-content;
-  transition: border-color 0.25s;
+  flex: 1;
+  transition: background 0.25s, transform 0.2s;
 }
-.cta:hover { border-color: #fff; }
+.addToCart:hover { background: #e0e0e0; }
+.addToCart.added {
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.wishlist {
+  width: 52px;
+  height: 52px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.wishlist:hover {
+  border-color: rgba(255,255,255,0.4);
+  color: #fff;
+}
+
+/* Meta */
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.metaItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.metaItem:last-child { border-bottom: none; }
+
+.metaLabel {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+}
+
+.metaValue {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Perks */
+.perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.perk {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.perk span {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.2);
+}
+
+.perk p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.3);
+  margin: 0;
+}
+
+/* Loading */
+.loading {
+  min-height: 100vh;
+  background: #080808;
+  padding: 10rem clamp(1.5rem, 5vw, 5rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+}
+
+.skeletonImg {
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(90deg, #111 25%, #1c1c1c 50%, #111 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.skeletonInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 2rem;
+}
+
+.skeletonLine {
+  height: 20px;
+  background: linear-gradient(90deg, #111 25%, #1c1c1c 50%, #111 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* Error */
+.error {
+  min-height: 100vh;
+  background: #080808;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.error h2 {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.error button {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  background: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.error button:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .gallery { position: static; }
+  .loading { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,369 @@
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.count {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+}
+
+.addBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.8rem;
+  background: #c8c8c8;
+  color: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.addBtn:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.error {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: #e05555;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(224,85,85,0.25);
+  background: rgba(224,85,85,0.06);
+  margin-bottom: 1.5rem;
+}
+
+.loading {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.empty {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.35);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.form {
+  background: #232323;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.form::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: #c8c8c8;
+}
+
+.formTitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin: 0 0 2rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: #fff;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.8rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+  width: 100%;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: rgba(255,255,255,0.35);
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+.field select option { background: #232323; }
+.field select:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.saveBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.5rem;
+  background: #c8c8c8;
+  color: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.saveBtn:hover:not(:disabled) {
+  background: #fff;
+  transform: translateY(-1px);
+}
+.saveBtn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.imagePreview {
+  width: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  margin-top: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.imagesManager {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.imageItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.5rem 0.75rem;
+}
+
+.imageThumb {
+  width: 40px; height: 40px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.imageUrl {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  color: rgba(255,255,255,0.45);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.removeImgBtn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.3);
+  cursor: pointer;
+  font-size: 0.7rem;
+  padding: 0.2rem;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+.removeImgBtn:hover { color: #e05555; }
+
+.addImageRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.addImageRow input {
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #fff;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.65rem 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.addImageRow input:focus { border-color: rgba(255,255,255,0.3); }
+.addImageRow input::placeholder { color: rgba(255,255,255,0.3); }
+
+.addImageBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.2rem;
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.18);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+.addImageBtn:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.4);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  white-space: nowrap;
+}
+
+.table td {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  padding: 1.1rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  vertical-align: middle;
+}
+
+.table tr:hover td { background: rgba(255,255,255,0.03); }
+
+.idCell {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.6rem !important;
+  color: rgba(255,255,255,0.35) !important;
+}
+
+.tableImg {
+  width: 44px; height: 44px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.noImg {
+  width: 44px; height: 44px;
+  background: #2a2a2a;
+  border: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.25);
+}
+
+.actionBtns {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.editBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.editBtn:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.05);
+}
+
+.deleteBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  background: transparent;
+  color: rgba(224,85,85,0.7);
+  border: 1px solid rgba(224,85,85,0.25);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.deleteBtn:hover {
+  color: #e05555;
+  border-color: rgba(224,85,85,0.6);
+  background: rgba(224,85,85,0.06);
+}
+
+.statusSelect {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.6);
+  background: #2a2a2a;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.45rem 0.8rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.statusSelect:focus { border-color: rgba(255,255,255,0.3); }
+.statusSelect option { background: #232323; }
+
+.subCatHint {
+  font-size: 0.5rem;
+  color: rgba(255,255,255,0.3);
+  font-weight: normal;
+  letter-spacing: 0.08em;
+}
+
+.fileInput {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+}

@@ -1,6 +1,6 @@
 .page {
   min-height: 100vh;
-  background: #080808;
+  background: #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,8 +10,8 @@
 .card {
   width: 100%;
   max-width: 440px;
-  background: #0f0f0f;
-  border: 1px solid rgba(255,255,255,0.06);
+  background: #232323;
+  border: 1px solid rgba(255,255,255,0.1);
   padding: 3rem;
 }
 
@@ -20,7 +20,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.5);
   margin: 0 0 2.5rem;
 }
 
@@ -28,7 +28,7 @@
   display: flex;
   gap: 0;
   margin-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .tab {
@@ -36,7 +36,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.45);
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
@@ -47,7 +47,7 @@
 }
 .tab.active {
   color: #fff;
-  border-bottom-color: #fff;
+  border-bottom-color: #c8c8c8;
 }
 
 .error {
@@ -76,7 +76,7 @@
   font-size: 0.58rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.55);
 }
 
 .field input,
@@ -84,8 +84,8 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 0.92rem;
   color: #fff;
-  background: #080808;
-  border: 1px solid rgba(255,255,255,0.08);
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.12);
   padding: 0.85rem 1rem;
   outline: none;
   transition: border-color 0.2s;
@@ -93,16 +93,12 @@
 }
 .field input:focus,
 .field select:focus {
-  border-color: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.35);
 }
-.field input::placeholder { color: rgba(255,255,255,0.2); }
+.field input::placeholder { color: rgba(255,255,255,0.35); }
+.field select option { background: #232323; }
 
-.field select option { background: #111; }
-
-.row {
-  display: flex;
-  gap: 1rem;
-}
+.row { display: flex; gap: 1rem; }
 
 .submit {
   font-family: 'DM Mono', monospace;
@@ -110,16 +106,52 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 1rem;
-  background: #fff;
-  color: #080808;
+  background: #c8c8c8;
+  color: #1a1a1a;
   border: none;
   cursor: pointer;
   transition: background 0.25s;
   margin-top: 0.5rem;
   width: 100%;
 }
-.submit:hover:not(:disabled) { background: #e0e0e0; }
-.submit:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
+.submit:hover:not(:disabled) { background: #fff; }
+.submit:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.inputError { border-color: rgba(224,85,85,0.5) !important; }
+.inputError:focus { border-color: rgba(224,85,85,0.8) !important; }
+
+.fieldError {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: #e05555;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.passwordStrength {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.strengthBar {
+  height: 2px;
+  flex: 1;
+  border-radius: 1px;
+  transition: background 0.3s, width 0.3s;
+}
+
+.strengthWeak   { background: #e05555; width: 33%; }
+.strengthMedium { background: #e0a855; width: 66%; }
+.strengthStrong { background: #4caf7d; width: 100%; }
+
+.strengthLabel {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  white-space: nowrap;
 }

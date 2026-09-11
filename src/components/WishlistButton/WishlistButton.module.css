@@ -1,0 +1,21 @@
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255,255,255,0.3);
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.2s;
+}
+.btn:hover {
+  color: rgba(255,255,255,0.7);
+  transform: scale(1.1);
+}
+.liked {
+  color: #e05555;
+}
+.liked:hover {
+  color: #ff6b6b;
+}

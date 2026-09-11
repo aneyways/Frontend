@@ -1,28 +1,45 @@
 .page {
   min-height: 100vh;
-  background: #080808;
-  padding: 10rem clamp(1.5rem, 5vw, 5rem) 6rem;
+  background: #1a1a1a;
+  padding: 8rem clamp(1.5rem, 5vw, 5rem) 6rem;
 }
 
-.inner { max-width: 900px; }
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  flex-wrap: wrap;
+}
 
 .eyebrow {
   font-family: 'DM Mono', monospace;
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.45);
   display: block;
-  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
   font-size: clamp(2.5rem, 7vw, 5rem);
   font-weight: 900;
   color: #fff;
-  margin: 0 0 4rem;
+  margin: 0;
   letter-spacing: -0.02em;
+  flex: 1;
+}
+
+.count {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
 }
 
 .empty {
@@ -31,13 +48,12 @@
   align-items: flex-start;
   gap: 2rem;
   padding: 4rem 0;
-  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .emptyText {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.45);
 }
 
 .cta {
@@ -46,10 +62,248 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 1rem 2.5rem;
-  background: #fff;
-  color: #080808;
+  background: #c8c8c8;
+  color: #1a1a1a;
   border: none;
   cursor: pointer;
   transition: background 0.25s;
 }
-.cta:hover { background: #e0e0e0; }
+.cta:hover { background: #fff; }
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 4rem;
+  align-items: start;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.itemImg {
+  width: 100px; height: 100px;
+  background: #232323;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.itemImg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.itemCategory {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+}
+
+.itemName {
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.itemPrice {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+}
+
+.itemControls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.qtyBtn {
+  width: 36px; height: 36px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qtyBtn:hover:not(:disabled) {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+.qtyBtn:disabled { opacity: 0.2; cursor: not-allowed; }
+
+.qtyNum {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: #fff;
+  width: 36px;
+  text-align: center;
+}
+
+.itemTotal {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  color: #fff;
+  margin: 0;
+}
+
+.remove {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  padding: 0.3rem;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.remove:hover { color: #fff; }
+
+.summary {
+  background: #232323;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2.5rem;
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.summaryTitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+
+.summaryRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.freeHint {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4);
+  margin: 0;
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-family: 'Bodoni Moda', 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.checkout {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1rem;
+  background: #c8c8c8;
+  color: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.25s;
+}
+.checkout:hover { background: #fff; }
+
+.continueShopping {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: center;
+  transition: color 0.2s;
+}
+.continueShopping:hover { color: #fff; }
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; }
+  .summary { position: static; }
+  .item {
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .itemControls {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.clearBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1.5rem 0 0;
+  transition: color 0.2s;
+}
+.clearBtn:hover { color: #e05555; }
